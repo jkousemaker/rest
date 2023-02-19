@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class Product_Controller extends AbstractController
+class Admin_Controller extends AbstractController
 {
     private $em;
     public function __construct(EntityManagerInterface $em)
@@ -25,46 +25,31 @@ class Product_Controller extends AbstractController
         $this->em = $em;
     }
 
-    #[Route('/products/{slug}', name: 'products')]
-    public function products(int $slug = null): Response
+    #[Route('/adminpanel/{page}', name: 'adminpanel')]
+    public function adminpanel(int $page = null): Response
     {
-
+        /*
+         * Save orders in variable and sent to adminpanel
+         */
         $repository = $this->em->getRepository(Categories::class);
         $categories = $repository->findAll();
 
-        $repository2 = $this->em->getRepository(Products::class);
-        $products = $repository2->findAll();
+        if($page == null) {
+            $page = 0;
+        }
 
-        return $this->render('rest/products.html.twig', [
+        return $this->render('rest/adminpanel.html.twig', [
             'categories' => $categories,
-            'id' => $slug
+            'page' => $page
         ]);
     }
 
-    #[Route('/product/{slug}', name: 'product')]
-    public function product(int $slug): Response
+    #[Route('/admin/{slug}/{type}/{$action}', name: 'admin')]
+    public function admin(int $slug, string $type, string $action): Response
     {
-        $id = $slug;
-
-        $repository = $this->em->getRepository(Products::class);
-        $product = $repository->find($id);
-
         return $this->render('rest/product.html.twig', [
-            'id' => $id,
-            'product' => $product
+
         ]);
-    }
-
-    #[Route('/api/product/{id<\d+>}', methods: ['GET'])]
-    public function getProduct(int $id): Response
-    {
-        $product = [
-            'id' => $id,
-            'name' => 'pepperoni',
-            'price' => 13,
-        ];
-
-        return $this->json($product);
     }
 }
 

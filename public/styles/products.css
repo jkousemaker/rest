@@ -1,0 +1,119 @@
+.category-navigation {
+    background: white;
+}
+
+.category-navigation > h1 {
+    margin: 0px;
+    margin-inline: 20px;
+
+}
+
+.category-navigation > nav > ul {
+    padding-inline: 23px;
+}
+
+.category-navigation > nav > ul > li > a{
+    color: grey;
+    font-size: 23px;
+    font-family: system-ui;
+    font-style: italic;
+}
+
+.product-categories {
+    max-height: 773px;
+    overflow-y: auto;
+}
+
+.product-category-header {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    padding-inline: 10px;
+    gap: 10px;
+    border-bottom: 1px solid black;
+}
+
+.product-category-header > h2, .product-category-header > p {
+    margin: 0px;
+}
+
+.category-products {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 284px [col-start]);
+    margin: 24px;
+}
+
+.product-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+.product-card > img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    object-fit: cover;
+}
+
+.product-card > p {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: system-ui;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+    z-index: 3;
+    top: 0px;
+    box-sizing: content-box;
+    margin-inline: 1rem;
+}
+
+.product-name {
+    left: 0px;
+}
+
+.product-price {
+    right: 0px;
+    opacity: 0;
+    transition: all .25s ease-in;
+}
+
+.hover-buttons {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+    transition: all .25s ease-in, backdrop-filter .5s ease-in-out;
+}
+
+.hover-buttons > a {
+    padding: 9px 10px;
+    background: black;
+    color: white;
+}
+
+.product-card:hover > .hover-buttons, .product-card:hover > .product-price {
+    opacity: 1;
+
+}
+.product-card:hover > .hover-buttons {
+    backdrop-filter: blur(3px);
+}
+
+.product-page-image > img {
+    max-height: 500px;
+}

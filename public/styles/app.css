@@ -1,0 +1,304 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html, body, .website-wrapper {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+.website-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 7px;
+    background: #ededed;
+    position: relative;
+}
+
+.jumbotron > .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jumbotron > .logo > i {
+    font-size: 40px;
+    transform: rotateY(180deg);
+}
+
+.jumbotron > .logo > p {
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'FontAwesome';
+    letter-spacing: 3px;
+}
+
+/*NAV*/
+
+/* Header menu 45 */
+.jumbotron > nav {
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 22px;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    left: 0px;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header menu 45 - Item */
+.jumbotron > nav > a {
+    padding: 5px 20px;
+    margin: 0px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #565E6CFF;
+    background: transparent;
+    border-radius: 2px;
+    /* border: 1px solid grey; */
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+}
+
+.jumbotron > nav > a:not(.selected-nav):hover {
+    color: black;
+}
+
+.signin-buttons {
+    z-index: 2;
+}
+
+.signin-buttons > a {
+    padding: 9px 10px;
+    color: grey;
+}
+
+.signin-buttons > a:last-child {
+    background: black;
+    color: white;
+}
+
+
+/* Header menu 45 - Selected item */
+.jumbotron > nav >  .selected-nav {
+    position: relative;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+/* Header menu 45 - Selected item */
+.jumbotron > nav >  .selected-nav:hover {
+    color: #000000FF; /* transparent */
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content-card {
+    display: flex;
+    background: grey;
+    flex-direction: row;
+    border: 1px solid grey;
+}
+
+.contact-form {
+    padding: 1rem;
+}
+
+.contact-form > h1 {
+    margin: 0px;
+}
+
+.contact-form, .contact-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-form {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.name-input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.contact-form > form > input[type=submit] {
+    margin-inline: auto;
+    padding: 11px 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+.home-page-wrap {
+    display: flex;
+    max-height: 539px;
+    max-width: 100%;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home-page-wrap > img {
+    max-height: 100%;
+}
+
+.hero-text {
+    margin: 43px;
+    max-height: 100%;
+    max-width: 33rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.information {
+    padding: 1rem;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.information > h1 {
+    margin: 0px;
+}
+
+.company-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.company-information {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-information:first-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.company-information:last-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.company-information > h3 {
+    margin: 0px;
+}
+
+.mapouter {
+    border-top-right-radius: 1rem;
+    overflow: hidden;
+}
+
+
+
+.login-page {
+    padding: 1rem;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.login-page > form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+input[type=submit] {
+    font-size: 1.5rem;
+    padding: 6px 14px;
+    font-weight: 600;
+    margin-inline: auto;
+}
+
+input[type=email] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-pills {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.admin-pill {
+    padding: 5px 0.5rem;
+    background: white;
+    border-radius: 16px;
+}
+
+.admin-pill > p {
+    margin: 0px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 4px;
+    background: #ededed;
+}
+
+footer > p {
+    margin: 10px;
+}

@@ -1,20 +1,59 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ parent() }} | Sign in{% endblock %}
+{% block title %}{{ parent() }} | Admin Panel{% endblock %}
 {% block body %}
-    <div class="login-page">
-        <h1>{{ title }}</h1>
-        <form action="">
-            <div class="name-form">
-                <div class="name-input">
-                    <label for="fname">First name</label>
-                    <input type="text" id="fname" name="fname">
+    <div class="admin-panel">
+        <h1>Admin Panel</h1>
+        <div class="admin-pills">
+            <div class="admin-pill">
+                <a href="{{ path('adminpanel')}}">Orders</a>
+            </div>
+            <div class="admin-pill">
+                <a href="{{ path('adminpanel', {page:1}) }}">Messages</a>
+            </div>
+        </div>
+        {% if page == 0 %}
+            <table>
+                <tr>
+                    <th>Full name</th>
+                    <th>Adress</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Justin Kousemaker</td>
+                    <td>Den Haag, Isabellaland 930, 2591ST</td>
+                    <td>
+                        <p>Pepperoni</p>
+                        <p>Margarita</p>
+                    </td>
+                    <td>
+                        <p>1</p>
+                        <p>2</p>
+                    </td>
+                    <td>
+                        <p>10$</p>
+                        <p>16$</p>
+                    </td>
+                </tr>
+            </table>
+        {% else %}
+            <div class="admin-messages">
+                <div class="admin-message">
+                    <h1>Title</h1>
+                    <h4>Name User</h4>
+                    <p>Email User</p>
+                    <p>Date submitted</p>
+                    <p>Message</p>
                 </div>
-                <div class="name-input">
-                    <label for="lname">Last name</label>
-                    <input type="text" id="lname" name="lname">
+                <div class="admin-message">
+                    <h1>Title</h1>
+                    <h4>Name User</h4>
+                    <p>Email User</p>
+                    <p>Date submitted</p>
+                    <p>Message</p>
                 </div>
             </div>
-            <input type="submit" value="Sign in" name="submit">
-        </form>
+        {% endif %}
     </div>
 {% endblock %}

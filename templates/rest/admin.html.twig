@@ -1,40 +1,17 @@
-{% extends 'base.html.twig' %}
+\{% extends 'base.html.twig' %}
 {% block title %}{{ parent() }} | About{% endblock %}
 {% block body %}
-    <div class="information">
-        <h1>Information</h1>
-        <p>Welcome to our pizza restaurant, where passion and quality come together to deliver a truly authentic and delicious dining experience. Our skilled chefs use only the freshest and finest ingredients to craft our mouth-watering pizzas, each one made with love and care. From classic favorites to unique and creative creations, we have something to satisfy every taste bud. Come savor the flavors of Italy in a warm and inviting atmosphere, and let us transport you to a world of flavor and delight. Whether you're looking for a cozy night in or a lively night out, we are here to serve you and make your dining experience unforgettable.</p>
-        <div class="company-data">
-            <div class="company-information">
-                <i class="fa-solid fa-phone-volume"></i>
-                <h3>+31 6 12059599</h3>
+    <div class="admin-panel">
+        <div class="admin-pills">
+            <div class="admin-pill">
+                <p>Orders</p>
             </div>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=Isabellaland%20930&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-i.net">123movies reviews</a><br><style>.mapouter{position:relative;text-align:right;height:200px;width:400px;}</style><a href="https://www.embedgooglemap.net">adding google map to wordpress</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:400px;}</style></div></div>
-            <div class="company-information">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>j.l.kousemaker@gmail.com</h3>
+            <div class="admin-pill">
+                <p>Products</p>
+            </div>
+            <div class="admin-pill">
+
             </div>
         </div>
-    </div>
-    <div class="contact-form">
-        <h1>Contact us</h1>
-        <p>Send and email and get a response within 2 working days</p>
-        <form>
-            <div class="name-form">
-                <div class="name-input">
-                    <label for="fname">First name</label>
-                    <input type="text" id="fname" name="fname">
-                </div>
-                <div class="name-input">
-                    <label for="lname">Last name</label>
-                    <input type="text" id="lname" name="lname">
-                </div>
-            </div>
-            <label for="email">Email adress</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            <input type="submit" name="submit" value="Send message">
-        </form>
     </div>
 {% endblock %}

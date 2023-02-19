@@ -39,20 +39,22 @@
             </table>
         {% else %}
             <div class="admin-messages">
-                <div class="admin-message">
-                    <h1>Title</h1>
-                    <h4>Name User</h4>
-                    <p>Email User</p>
-                    <p>Date submitted</p>
-                    <p>Message</p>
-                </div>
-                <div class="admin-message">
-                    <h1>Title</h1>
-                    <h4>Name User</h4>
-                    <p>Email User</p>
-                    <p>Date submitted</p>
-                    <p>Message</p>
-                </div>
+                {% for message in messages %}
+
+
+
+
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ message.firstName }} {{ message.lastName }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ message.email }}</h6>
+                            <p class="card-text">{{ message.msg }}</p>
+                            <a href="{{ path('delete_message', {'id': message.id}) }}" class="btn btn-warning card-link">Delete</a>
+                        </div>
+                    </div>
+
+                {% endfor %}
             </div>
         {% endif %}
     </div>

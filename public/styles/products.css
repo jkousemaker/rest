@@ -100,12 +100,6 @@
     transition: all .25s ease-in, backdrop-filter .5s ease-in-out;
 }
 
-.hover-buttons > a {
-    padding: 9px 10px;
-    background: black;
-    color: white;
-}
-
 .product-card:hover > .hover-buttons, .product-card:hover > .product-price {
     opacity: 1;
 

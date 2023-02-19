@@ -6,4 +6,6 @@ Add messages entity
 
 Add cart
 Add payment page
-Add
+Add order overview in adminpanel with option to change status and delete
+
+Validate all forms with error messages

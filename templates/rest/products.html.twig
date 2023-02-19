@@ -2,25 +2,43 @@
 {% block title %}{{ parent() }} | Products{% endblock %}
 {% block body %}
 
-        <div class="category-navigation">
-            <h1>Categories</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a class="category-button" href="{{ path('products') }}">All</a>
-                    </li>
-                    {% for category in categories %}
-                        <li>
-                            <a class="category-button" href="{{ path('products', {
-                                slug: category.id
-                            }) }}">{{ category.name }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
+        <div class="col-sm-2 bg-secondary-subtle">
+            <div>
+                <h1>Categories</h1>
+                <nav>
+                    <ul class="list-group">
+                        {% if app.request.get('slug') == null %}
+                            <li class="list-group-item active">
+                                <a style="color: white;" href="{{ path('products') }}">All</a>
+                            </li>
+                        {% else %}
+                            <li class="list-group-item">
+                                <a href="{{ path('products') }}">All</a>
+                            </li>
+                        {% endif %}
 
-            </nav>
+                        {% for category in categories %}
+                            {% if category.id == app.request.get('slug') %}
+                                <li class="list-group-item active">
+                                    <a style="color: white;"href="{{ path('products', {
+                                        slug: category.id
+                                    }) }}">{{ category.name }}</a>
+                                </li>
+                            {% else %}
+                                <li class="list-group-item">
+                                    <a href="{{ path('products', {
+                                        slug: category.id
+                                    }) }}">{{ category.name }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+
+                </nav>
+            </div>
+
         </div>
-        <div class="product-categories">
+        <div class="col">
             {% for category in categories %}
                 {% if id == null or category.id == id %}
                 <div class="product-category">
@@ -37,8 +55,10 @@
                                     <p class="product-name">{{ product.name }}</p>
                                     <p class="product-price">{{ product.price }}$</p>
                                     <div class="hover-buttons">
-                                        <a href="/product/{{ product.id }}">More info</a>
-                                        <a href="">Add to cart</a>
+                                        <a class="btn btn-secondary" href="{{ path('product', {
+                                            slug: product.id
+                                        }) }}">More info</a>
+                                        <a class="btn btn-primary" href="">Add to cart</a>
                                     </div>
                                 </div>
                             {% endfor %}

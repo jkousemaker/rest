@@ -24,6 +24,7 @@ body {
     padding: 7px;
     background: #ededed;
     position: relative;
+    flex: none;
 }
 
 .jumbotron > .logo {
@@ -89,16 +90,6 @@ a {
     z-index: 2;
 }
 
-.signin-buttons > a {
-    padding: 9px 10px;
-    color: grey;
-}
-
-.signin-buttons > a:last-child {
-    background: black;
-    color: white;
-}
-
 
 /* Header menu 45 - Selected item */
 .jumbotron > nav >  .selected-nav {
@@ -149,7 +140,7 @@ a {
     gap: 40px;
 }
 
-.name-input {
+.name-form > div {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -297,6 +288,7 @@ footer {
     justify-content: space-between;
     padding-inline: 4px;
     background: #ededed;
+    flex: none;
 }
 
 footer > p {

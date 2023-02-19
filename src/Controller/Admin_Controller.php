@@ -10,6 +10,7 @@ namespace App\Controller;
 
 
 use App\Entity\Categories;
+use App\Entity\Messages;
 use App\Entity\Products;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -28,18 +29,15 @@ class Admin_Controller extends AbstractController
     #[Route('/adminpanel/{page}', name: 'adminpanel')]
     public function adminpanel(int $page = null): Response
     {
-        /*
-         * Save orders in variable and sent to adminpanel
-         */
-        $repository = $this->em->getRepository(Categories::class);
-        $categories = $repository->findAll();
+        $repository = $this->em->getRepository(Messages::class);
+        $messages = $repository->findAll();
 
         if($page == null) {
             $page = 0;
         }
 
         return $this->render('rest/adminpanel.html.twig', [
-            'categories' => $categories,
+            'messages' => $messages,
             'page' => $page
         ]);
     }

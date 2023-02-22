@@ -9,8 +9,19 @@
         <h4>{{ product.description }}</h4>
         <div class="product-page-checkout">
             <p>{{ product.price }}$</p>
-            <input type="number">
-            <button>Add to cart</button>
+            {{ form_start(orderForm) }}
+            {{ form_row(orderForm.size, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.amount, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.full_name , {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.city, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.zipcode, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.street, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.street_number, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.creditcard, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(orderForm.submit, {'attr': {'class': 'form-control'}}) }}
+            {{ form_end(orderForm) }}
         </div>
+
+
     </div>
 {% endblock %}

@@ -11,6 +11,7 @@ namespace App\Controller;
 
 use App\Entity\Categories;
 use App\Entity\Messages;
+use App\Entity\Order;
 use App\Entity\Products;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -32,12 +33,16 @@ class Admin_Controller extends AbstractController
         $repository = $this->em->getRepository(Messages::class);
         $messages = $repository->findAll();
 
+        $repository2 = $this->em->getRepository(Order::class);
+        $orders = $repository2->findAll();
+
         if($page == null) {
             $page = 0;
         }
 
         return $this->render('rest/adminpanel.html.twig', [
             'messages' => $messages,
+            'orders' => $orders,
             'page' => $page
         ]);
     }
